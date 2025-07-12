@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<!-- Mirrored from ip75.vp3.titanaxe.com/src/output/d4e8e88d-e151-43b6-9740-d0542af42ae5/profiledata.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2025 11:41:06 GMT -->
+<head>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edycja danych paszportu</title>
+    <style>
+        /* Stylowanie formularza i zdjęcia */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; /* Delikatny szary dla tła */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Przesunięcie do góry */
+            height: 100vh;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Brak poziomego przewijania */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 30em; /* Mniejsza szerokość formularza */
+            background: #ffffff;
+            border-radius: 0.8em;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Subtelne cienie */
+            padding: 2.5em;
+            margin-top: 2em; /* Przesunięcie formularza w dół, aby nagłówek był widoczny */
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 1.7em; /* Ustalona czcionka dla nagłówka */
+            margin-bottom: 1.5em;
+            color: #34495e; /* Zmieniony na ciemniejszy, stonowany granatowy */
+            padding-top: 10px; /* Przesunięcie nagłówka o kilka pikseli */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 1.8em;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group select {
+            margin-bottom: 1.8em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1em;
+            margin-bottom: 0.8em;
+            display: block;
+            color: #7f8c8d; /* Jaśniejszy odcień szarości */
+        }
+
+        input {
+            width: 100%;
+            padding: 1em;
+            font-size: 1em;
+            border: 1px solid #bdc3c7; /* Subtelna, ciemniejsza szarość */
+            border-radius: 0.8em;
+            background-color: #f9f9f9; /* Jasne tło inputów */
+            transition: all 0.3s ease; /* Gładka animacja */
+            box-sizing: border-box;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 0.8em;
+            font-size: 1em;
+            border: 1px solid #bdc3c7; /* Subtelna, ciemniejsza szarość */
+            border-radius: 0.8em;
+            background-color: #f9f9f9; /* Jasne tło inputów */
+            transition: all 0.3s ease; /* Gładka animacja */
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #3498db; /* Subtelny niebieski podczas fokusa */
+            background-color: #ecf0f1; /* Jaśniejsze tło przy focusu */
+            outline: none;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5em;
+        }
+
+        .save-button, .back-button {
+            padding: 1em 1.8em;
+            font-size: 1.1em;
+            border-radius: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: block;
+            margin: 0;
+        }
+
+        .save-button {
+            background-color: #3498db; /* Elegancki niebieski */
+            color: white;
+        }
+
+        .save-button:hover {
+            background-color: #2980b9; /* Zmiana koloru na ciemniejszy niebieski przy hover */
+            transform: translateY(-3px); /* Subtelny efekt podnoszenia */
+        }
+
+        .back-button {
+            background-color: #95a5a6; /* Elegancki odcień szarości */
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #7f8c8d; /* Ciemniejszy odcień szarości przy hover */
+            transform: translateY(-3px); /* Subtelny efekt podnoszenia */
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .photo-container img {
+            width: 100%;
+            max-width: 180px; /* Zmniejszone zdjęcie, aby wyglądało elegancko */
+            height: auto;
+            border-radius: 0.8em;
+            margin-bottom: 1.5em;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtelne cienie */
+        }
+
+        .file-input {
+            display: block;
+            margin: 0 auto;
+            padding: 1em 1.8em; /* Stylowanie przycisku do wyboru pliku */
+            background-color: #bdc3c7; /* Jasny szary */
+            color: white;
+            font-size: 1.1em;
+            border-radius: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .file-input:hover {
+            background-color: #95a5a6; /* Ciemniejszy szary przy hover */
+            transform: translateY(-3px); /* Subtelny efekt podnoszenia */
+        }
+        
+        #address {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+        /* Responsywność na mniejszych ekranach */
+        @media (max-width: 600px) {
+            .container {
+                padding: 2em;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+                margin-bottom: 1.5em;
+            }
+
+            .save-button, .back-button, .file-input {
+                font-size: 0.9em;
+                padding: 0.9em 1.6em;
+            }
+
+            input {
+                font-size: 0.9em;
+                padding: 1em;
+            }
+
+            .photo-container img {
+                max-width: 150px;
+            }
+
+            .form-group {
+                margin-bottom: 1.5em;
+            }
+
+            .form-group select {
+                margin-bottom: 0.5em;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 1.5em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+            }
+
+            .save-button, .back-button, .file-input {
+                padding: 0.8em 1.4em;
+                font-size: 0.9em;
+            }
+
+            .photo-container img {
+                max-width: 130px;
+            }
+            
+
+        input[type="text"], input[type="date"], select {
+            text-transform: uppercase; /* Wymusza wielkie litery */
+        }
+    }
+    </style>
+
+    <script>
+        window.addEventListener('load', checkInstallation);
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Edycja danych</h1>
+        </header>
+        <div class="photo-container">
+            <img id="profileImage" src="" alt="Profile Photo">
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+        <script>
+            document.getElementById('imageInput').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageUrl = e.target.result;
+                        document.getElementById('profileImage').src = imageUrl;
+                        localStorage.setItem('profileImage', imageUrl);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+    
+            function saveData() {
+                // ...existing code...
+                const profileImage = document.getElementById('profileImage').src;
+                localStorage.setItem('profileImage', profileImage);
+                // ...existing code...
+            }
+    
+            // Load the image from localStorage on page load
+            window.onload = function() {
+                const savedImage = localStorage.getItem('profileImage');
+                if (savedImage) {
+                    document.getElementById('profileImage').src = savedImage;
+                }
+            };
+        </script>
+        <form id="passport-form">
+            <!-- Sekcja podstawowa -->
+            <div class="form-group">
+                <label for="name">Imię (imiona):</label>
+                <input type="text" id="name" name="name" placeholder="Wprowadź imię" required oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="surname">Nazwisko:</label>
+                <input type="text" id="surname" name="surname" placeholder="Wprowadź nazwisko" required oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="nationality">Obywatelstwo:</label>
+                <input type="text" id="nationality" name="nationality" placeholder="Wprowadź obywatelstwo" required oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Data urodzenia:</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+            <div class="form-group">
+                <label for="pesel">PESEL:</label>
+                <input type="text" id="pesel" name="pesel" placeholder="Wprowadź numer PESEL" required oninput="convertToUpperCase(this)">
+            </div>
+        
+            <!-- Sekcja "Twoje dane dodatkowe" -->
+            <div class="form-group">
+                <h2>Twoje dane dodatkowe</h2>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nazwisko rodowe:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Brak danych"  oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="gender">Płeć:</label>
+                <select id="gender" name="gender">
+                    <option value="MĘŻCZYZNA">Mężczyzna</option>
+                    <option value="KOBIETA">Kobieta</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fatherSurname">Nazwisko rodowe ojca:</label>
+                <input type="text" id="fatherSurname" name="fatherSurname" placeholder="Brak danych" oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="motherSurname">Nazwisko rodowe matki:</label>
+                <input type="text" id="motherSurname" name="motherSurname" placeholder="Brak danych"  oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="placeOfBirth">Miejsce urodzenia:</label>
+                <input type="text" id="placeOfBirth" name="placeOfBirth" placeholder="Brak danych"  oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="address">Adres zameldowania na pobyt stały:</label>
+                <input type="text" id="address" name="address" placeholder="UL." oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="postalcode">Miejscowość:</label>
+                <input type="text" id="postalcode" name="postalcode" placeholder="00-001, Warszawa" oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="registrationDate">Data zameldowania na pobyt stały:</label>
+                <input type="date" id="registrationDate" name="registrationDate">
+            </div>
+        
+            <!-- Sekcja "dane mdowodu" -->
+            <div class="form-group">
+                <h2>Dane mDowodu</h2>
+            </div>
+            <div class="form-group">
+                <label for="idSeries">Seria i numer:</label>
+                <input type="text" id="idSeries" name="idSeries" placeholder="Brak danych"  oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Termin ważności:</label>
+                <input type="date" id="expiryDate" name="expiryDate">
+            </div>
+            <div class="form-group">
+                <label for="issueDate">Data wydania:</label>
+                <input type="date" id="issueDate" name="issueDate">
+            </div>
+            <div class="form-group">
+                <label for="fathername">Imię ojca:</label>
+                <input type="text" id="fathername" name="fathername" placeholder="Brak danych"  oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="mothername">Imię matki:</label>
+                <input type="text" id="mothername" name="mothername" placeholder="Brak danych"  oninput="convertToUpperCase(this)">
+            </div>
+            <!-- Sekcja "dane dowodu osobistego" -->
+            <div class="form-group">
+                <h2>Dane dowodu osobistego</h2>
+            </div>
+            <div class="form-group">
+                <label for="idSeriesx">Seria i numer:</label>
+                <input type="text" id="idSeriesx" name="idSeriesx" placeholder="XYZ 5 losowych liczb"  oninput="convertToUpperCase(this)">
+            </div>
+            <div class="form-group">
+                <label for="expiryDatex">Termin ważności:</label>
+                <input type="date" id="expiryDatex" name="expiryDatex">
+            </div>
+            <div class="form-group">
+                <label for="issueDatex">Data wydania:</label>
+                <input type="date" id="issueDatex" name="issueDatex">
+            </div>
+            <div class="form-group">
+                <label for="city">Organ wydający:</label>
+                <input type="text" id="city" name="city" placeholder="BURMISTRZ MIASTA/GMINY XXX"  oninput="convertToUpperCase(this)">
+            </div>
+        
+            <div class="buttons">
+                <button type="button" class="save-button" onclick="saveData()">Zapisz</button>
+                <a href="dowodnowy.html" class="back-button">Powrót</a>
+            </div>
+        </form>
+        
+        <script>
+        // Funkcja konwertująca tekst na wielkie litery
+        function convertToUpperCase(input) {
+            input.value = input.value.toUpperCase();
+        }
+        
+        // Funkcja do zapisania danych paszportowych
+        function saveData() {
+            const name = document.getElementById("name").value;
+            const surname = document.getElementById("surname").value;
+            const nationality = document.getElementById("nationality").value;
+            const birthDate = document.getElementById("birthDate").value;
+            const pesel = document.getElementById("pesel").value;
+            const lastName = document.getElementById("surname").value;
+            const gender = document.getElementById("gender").value;
+            const fatherSurname = document.getElementById("fatherSurname").value;
+            const motherSurname = document.getElementById("motherSurname").value;
+            const placeOfBirth = document.getElementById("placeOfBirth").value;
+            const address = document.getElementById("address").value;
+            const postalcode = document.getElementById("postalcode").value;
+            const registrationDate = document.getElementById("registrationDate").value;
+        
+            const idSeries = document.getElementById("idSeries").value;
+            const expiryDate = document.getElementById("expiryDate").value;
+            const issueDate = document.getElementById("issueDate").value;
+            const fathername = document.getElementById("fathername").value;
+            const mothername = document.getElementById("mothername").value;
+        
+            const idSeriesx = document.getElementById("idSeriesx").value;
+            const expiryDatex = document.getElementById("expiryDatex").value;
+            const issueDatex = document.getElementById("issueDatex").value;
+            const city = document.getElementById("city").value;
+        
+            // Zapisz dane do localStorage
+            localStorage.setItem("name", name);
+            localStorage.setItem("surname", surname);
+            localStorage.setItem("nationality", nationality);
+            localStorage.setItem("birthDate", birthDate);
+            localStorage.setItem("pesel", pesel);
+            localStorage.setItem("lastName", lastName);
+            localStorage.setItem("gender", gender);
+            localStorage.setItem("fatherSurname", fatherSurname);
+            localStorage.setItem("motherSurname", motherSurname);
+            localStorage.setItem("placeOfBirth", placeOfBirth);
+            localStorage.setItem("address", address);
+            localStorage.setItem("postalcode", postalcode);
+            localStorage.setItem("registrationDate", registrationDate);
+            localStorage.setItem("idSeries", idSeries);
+            localStorage.setItem("expiryDate", expiryDate);
+            localStorage.setItem("issueDate", issueDate);
+            localStorage.setItem("fathername", fathername);
+            localStorage.setItem("mothername", mothername);
+            localStorage.setItem("idSeriesx", idSeriesx);
+            localStorage.setItem("expiryDatex", expiryDatex);
+            localStorage.setItem("issueDatex", issueDatex);
+            localStorage.setItem("city", city);
+        
+            alert("Dane zostały zapisane!");
+        }
+        
+
+        </script>
+    <script src="js/security.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', checkIPAccess);
+    </script>
+    
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">

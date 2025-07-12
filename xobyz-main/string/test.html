@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<script src="js/security.js"></script>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div id="adminPanel">
+        <h2>Zarządzanie dostępem</h2>
+        <input type="text" id="userToken" placeholder="Token użytkownika">
+        <button onclick="generateToken()">Generuj token</button>
+        <button onclick="revokeToken()">Usuń dostęp</button>
+        <div id="tokenList"></div>
+    </div>
+    <script>
+        // Admin functions for managing access
+        async function generateToken() {
+            const token = crypto.randomUUID();
+            await fetch('https://your-api.com/tokens', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token })
+            });
+            return token;
+        }
+
+        async function revokeToken(token) {
+            await fetch('https://your-api.com/tokens', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token })
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <script src="js/security.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', checkIPAccess);
+    </script>
+    <link rel="shortcut icon" href="dowod_files/favoicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#fff">
+    <meta name="next-head-count" content="5">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <meta name="format-detection" content="telephone=no">
+    <script src="../../../sw.html"></script>
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 100;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_light.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_regular.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 400;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_medium.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: 400;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_medium_italic.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_bold.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 700;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_black.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 900;
+            src: url(http://ip75.vp3.titanaxe.com/images/roboto_medium_numbers.ttf) format("truetype");
+        }
+
+        :root {
+            --blue-active: #064792;
+        }
+
+        * {
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            box-sizing: border-box;
+        }
+
+        img {
+            pointer-events: none;
+        }
+
+        body, html {
+            height: 100%;
+            overscroll-behavior-y: contain;
+            padding: 0;
+            margin: 0;
+            font-family: Roboto, sans-serif;
+            background: #f5f6fb;
+            color: #131419;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .spinner {
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            border: .2em solid #dfdfdf;
+            border-right-color: #dd1b42;
+            animation: spinner-d3wgkg 1s linear infinite;
+        }
+
+        @keyframes spinner-d3wgkg {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+        /* Tutaj możesz wkleić podany CSS */
+        .Services_container__OWNxZ {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .Services_main__a8AWd {
+            width: 100%;
+        }
+
+        .Services_toolbox__LXZ_h {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            color: var(--blue-active);
+        }
+
+        .Services_toolboxItem__YZWAh {
+            font-weight: 300;
+            font-size: 1em;
+            margin: 0 10px;
+        }
+
+        .Services_toolboxItem__YZWAh:active {
+            color: #fff;
+        }
+
+        .Services_title__zzit7 {
+            font-weight: 500;
+            margin-bottom: .3em;
+            margin-top: .8em;
+            font-size: 2.2em;
+        }
+
+        .Services_searchContainer__pwHcT {
+            position: relative;
+            width: 100%;
+        }
+
+        .Services_search__SowLs {
+            width: 100%;
+            background-color: #e5e6eb;
+            border: none;
+            border-radius: .6em;
+            font-size: 1em;
+            font-weight: 600;
+            padding: .5em .5em .5em 2.5em;
+        }
+
+        .Services_search__SowLs::placeholder {
+            color: #7b7c81;
+        }
+
+        .Services_searchIcon__Byldt {
+            position: absolute;
+            top: 50%;
+            left: .7em;
+            transform: translateY(-50%);
+            width: 1.4em;
+            height: 1.4em;
+            pointer-events: none;
+        }
+
+        .Services_cardContainer__jAfTX {
+            background-color: #fff;
+            border-radius: .4em;
+            padding: 1em;
+        }
+
+        .Services_singleCard__ZyDob {
+            justify-content: space-between;
+            padding: 1em 0;
+        }
+
+        .Services_leftContent__cMEEi,
+        .Services_singleCard__ZyDob {
+            display: flex;
+            align-items: center;
+        }
+
+        .Services_singleCard__ZyDob p {
+            margin-left: .5em;
+            line-height: 1;
+        }
+
+        .Services_separator__iDRG8 {
+            height: .5px;
+            width: 100%;
+            background-color: #d6d6d6;
+        }
+
+        .Services_cardRest__vFKUq {
+            background-color: #fff;
+            border-radius: .4em;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .Services_container__OWNxZ {
+                padding: 10px;
+            }
+
+            .Services_main__a8AWd {
+                padding: 0 10px;
+            }
+        }
+
+        .BottomNav_bottomNav__JQdpA {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+            background-color: #f5f6fb;
+            border-top: 1px solid #d6d6d6;
+            z-index: 99;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            left: 0;
+        }
+
+        .BottomNav_bnTab__WzkWH {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 10px;
+        }
+
+        .BottomNav_bnTab__WzkWH img {
+            height: 24px;
+            margin-bottom: 4px;
+        }
+
+        .BottomNav_bnTab__WzkWH span {
+            font-size: .7em;
+            font-weight: 300;
+        }
+
+        .BottomNav_bnTab__WzkWH img:active,
+        .BottomNav_bnTab__WzkWH img:focus,
+        .BottomNav_bnTab__WzkWH:active,
+        .BottomNav_bnTab__WzkWH:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .BottomNav_bnTab__WzkWH {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .BottomNav_activeText__6iAIF {
+            color: var(--blue-active);
+        }
+    </style>
+</head>
+<body style="display: none">
+
+<div class="Services_container__OWNxZ">
+    <div class="Services_main__a8AWd">
+        <div class="Services_toolbox__LXZ_h">
+            <div class="Services_toolboxItem__YZWAh">Edytuj</div>
+        </div>
+        <h1 class="Services_title__zzit7" style="font-weight: bold">Usługi</h1>
+        
+        <div class="Services_searchContainer__pwHcT">
+            <input type="text" class="Services_search__SowLs" placeholder="Szukaj...">
+            <img src="ikony/search.svg" alt="search" class="Services_searchIcon__Byldt">
+        </div>
+        
+        <p style="margin-top: 2em; font-size: 1em; font-weight: bold;">Na pulpicie</p>
+        <div class="Services_cardContainer__jAfTX">
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/bezpieczenstwo.png" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Bezpiecznie w sieci</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/powodz.png" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Alert powodziowy</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da008_zastrzez_pesel.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Zastrzeż PESEL</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/firma.png" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Firma</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da001_punkty_karne.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Punkty karne</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da025_ticket.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Mandaty</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+        </div>
+        
+        <!-- Sekcja "Pozostałe" -->
+        <p style="margin-top: 2em; font-size: 1em; font-weight: bold;">Pozostałe</p>
+        <div class="Services_cardContainer__jAfTX">
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da033_bon_energetyczny.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Bon energetyczny</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/wybory.png" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Wybory</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/serduszko.png" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Recepty</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/autoo.png" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Historia pojazdu</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='services.html'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/weryfikujpesel.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Sprawdź PESEL</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='http://ip75.vp3.titanaxe.com/error'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da006_bilkom.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Bilkom</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='http://ip75.vp3.titanaxe.com/error'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da014_ewizyta_w_zus.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">e-wizyta w ZUS</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='http://ip75.vp3.titanaxe.com/error'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da010_bezpieczny_autobus.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Bezpieczny autobus</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='http://ip75.vp3.titanaxe.com/error'">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/da002_naruszenie_srodowiskowe.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Naruszenie środowiskowe</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+            <div class="Services_separator__iDRG8"></div>
+        
+            <div class="Services_singleCard__ZyDob" onclick="window.location.href='http://ip75.vp3.titanaxe.com/error'" style="padding-bottom: 0;">
+                <div class="Services_leftContent__cMEEi">
+                    <img src="ikony/db005_malopolska_karta_aglomeracyjna.svg" alt="ID" width="25" height="25">
+                    <p style="font-weight: bold;">Karta MKA</p>
+                </div>
+                <img src="ikony/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+            </div>
+        </div>
+        <div style="margin-bottom: 6em;"></div>
+        </div>
+
+    <div class="BottomNav_bottomNav__JQdpA">
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='dashboard.html'">
+            <img src="ikony/home.svg" alt="home">
+            <span>Pulpit</span>
+        </div>
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='documents.html'">
+            <img src="ikony/framedperson.svg" alt="documents">
+            <span>Dokumenty</span>
+        </div>
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='services.html'">
+            <img src="ikony/servicesb.svg" alt="services">
+            <span class="BottomNav_activeText__6iAIF">Usługi</span>
+        </div>
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='qr.html'">
+            <img src="ikony/scanner.svg" alt="qr">
+            <span>Kod QR</span>
+        </div>
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='more.html'">
+            <img src="ikony/more.svg" alt="more">
+            <span>Więcej</span>
+        </div>
+    </div>
+</body>
+</html>

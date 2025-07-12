@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html></html>
+<!-- Mirrored from sb987c4zjvju65987b.ct8.pl/fObywatel_samepoint1_j0ysYnGidI/dowodnowy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2024 19:33:51 GMT -->
+<html lang="pl"></html>
+
+<!-- Mirrored from ip75.vp3.titanaxe.com/src/output/d4e8e88d-e151-43b6-9740-d0542af42ae5/dowodnowy.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2025 11:39:32 GMT -->
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+    <script src="sw.js"></script>
+    <script src="js/security.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>demoObywatel</title>
+    <link rel="shortcut icon" href="dowod_files/favoicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#fff">
+    <meta name="next-head-count" content="5">
+    <link rel="preload" href="dowod_files/main.css" as="style">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="dowod_files/main.css" data-n-g="">
+    <link rel="manifest" href="manifest.json">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <noscript data-n-css=""></noscript>
+    <script>
+    // Alternatywne podejďż˝cie do ukrywania paska adresu
+    setTimeout(function() {
+        window.scrollTo(0, 1);
+    }, 0);
+
+    </script>
+    <style>
+  body {
+    overscroll-behavior: contain;
+    animation: slideIn 0.4s ease-out;
+    overflow-x: hidden;
+}
+
+/* Dodajemy reguďż˝y dla pionowego przewijania */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+} */
+
+@supports (-webkit-touch-callout: none) {
+    .dzit {
+        margin-bottom: 1.0rem;
+    }
+}
+
+.photo-container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+#profileImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.photo-border {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Keep existing classes */
+.object-contain {
+    object-fit: contain;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.photo {
+    filter: grayscale(100%);
+}
+
+#user-photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 9em;
+}
+#address {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+#gradient {
+    /* position: relative;
+    bottom: 10px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    color: #f1f1f1;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    padding: 6px;
+    text-align: center;
+    z-index: 2;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin: 0; */
+}
+
+.notification {
+            position: fixed;
+            bottom: 12vh;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #444; /* Szary kolor tła */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none; /* Ukryte domyślnie */
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* Animacja wejścia */
+        .notification.show {
+            display: block;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) translateX(-50%);
+            }
+            10%, 90% {
+                opacity: 1;
+                transform: translateY(0) translateX(-50%);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px) translateX(-50%);
+            }
+        }
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+}
+
+    </style>
+  <link rel="stylesheet" href="css/dowodnowy.css">
+<script src="../../../../code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="js/fullscreen-check.js"></script>
+<script>
+    window.addEventListener('load', checkInstallation);
+</script>
+  </head>
+
+<body class="">
+    
+    <header>
+        <a href="dashboard.html"><img src="dowod_files/pozdro.svg" alt="leftarrow"></a>
+        <span style="font-family: 'Inter'; font-weight: 900; position: relative; left: -6%;">mDowód</span>
+         <img style="width: 25px; height: 25px;" src="dowod_files/madziamojakotka123.svg" alt="">
+    </header>
+    <p class="czas">Czas: 20:32:33 15.05.2024</p>
+    <script src="dowod_files/timenew.js"></script>
+    <main>
+        <section id="lew">
+    <!-- ...existing code... -->
+    <div class="photo-container" style="position: relative;">
+        <img id="profileImage" 
+             src="" 
+             class="object-contain w-full rounded-lg photo" 
+             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" 
+             alt="Profile Photo">
+        <img class="photo-border" 
+             src="dowod_files/szmata.png" 
+             style="position: relative; z-index: 2;" 
+             alt="">
+    </div>
+    <!-- ...existing code... -->
+    <script>
+        // Load the image from localStorage on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                document.getElementById('profileImage').src = savedImage;
+            }
+        });
+    </script>
+            <div id="gradient"></div>
+            <img src="dowod_files/flaga.gif" alt="flaga" id="flaga" style="margin: 0; margin-top: 13px;">
+            <div id="rzecz" style="margin: 0; margin-top: 10px;">
+              <img src="dowod_files/godlo.gif" alt="godlo" id="godlo">
+
+              <script>
+                // Załaduj zdjęcie z localStorage, jeśli istnieje
+                window.onload = function () {
+                    const savedPhoto = localStorage.getItem("photo");
+                    if (savedPhoto) {
+                        const userPhoto = document.getElementById("user-photo");
+                        userPhoto.src = savedPhoto;  // Ustaw zapisane zdjęcie
+                    }
+                };
+                </script>
+            </body>
+                <p style="margin-left: 7px;">Rzeczpospolita<br>Polska</p>
+            </div>
+        </section>
+        <section id="praw">
+            <div class="cwel">
+                <span class="title" id="display-name"></span>
+                <span class="description">Imię (imiona)</span>
+            </div>
+            <div class="cwel">
+                <span class="title" id="display-surname"></span>
+                <span class="description">Nazwisko</span>
+            </div>
+            <div class="cwel">
+                <span class="title" id="display-nationality"></span>
+                <span class="description">Obywatelstwo</span>
+            </div>
+            <div class="cwel">
+                <span class="title" id="display-birthDate"></span>
+                <span class="description">Data urodzenia</span>
+            </div>
+            <div class="cwel">
+                <span class="title" id="display-pesel"></span>
+                <span class="description">Numer PESEL</span>
+            </div>
+        </section>
+    
+        <script>
+ // Funkcja konwertująca z formatu yyyy-mm-dd na dd.mm.yyyy
+ function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+}
+
+// Wczytaj dane z localStorage i wyświetl je
+document.getElementById("display-name").innerText = localStorage.getItem("name") || "Brak danych";
+document.getElementById("display-surname").innerText = localStorage.getItem("surname") || "Brak danych";
+document.getElementById("display-nationality").innerText = localStorage.getItem("nationality") || "Brak danych";
+
+// Wczytaj i sformatuj datę urodzenia
+const birthDate = localStorage.getItem("birthDate");
+document.getElementById("display-birthDate").innerText = birthDate ? formatDate(birthDate) : "Brak danych";
+
+document.getElementById("display-pesel").innerText = localStorage.getItem("pesel") || "Brak danych";
+
+        </script>
+    </main>
+    <section id="bottom">
+        <img src="https://sb987c4zjvju65987b.ct8.pl/dowod_files/checkmark.svg" alt="checkmark">
+        <p>Dokument ważny</p>
+    </section>
+    <a class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img style="width: 35px;" src="dowod_files/checkbo.png" alt="checkbox">
+        <p style="margin-left: 10px; font-weight: bold;">Potwierdź swoje dane</p>
+        <img src="dowod_files/arrow.svg" alt="arrow" id="arrow">
+    </a>
+    <div  class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"  onclick="wybordokumentumenu()" > 
+        <img style="width: 35px;" src="dowod_files/card.png" alt="card">
+        <p style="margin-left: 10px; font-weight: bold;">Dane dokumentu</p>
+        <img src="dowod_files/arrow.svg" alt="arrow" id="arrow">
+    </div>    
+    <section class="collapsible buto" id="lo" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <p style="margin-left: 10px; font-weight: bold;">Twoje dodatkowe dane</p>
+        <img src="dowod_files/arrow.svg" alt="arrow" id="rotation" style="transform: rotate(-90deg);">
+    </section>
+    
+    <div id="rogo">
+        <div class="content">
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Nazwisko rodowe</p>
+                <p class="main" id="lastName">Brak danych</p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Płeć</p>
+                <p class="main" id="gender">Mężczyzna</p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Nazwisko rodowe ojca</p>
+                <p class="main" id="fatherSurname">Brak danych</p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Nazwisko rodowe matki</p>
+                <p class="main" id="motherSurname">Brak danych</p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Miejsce urodzenia</p>
+                <p class="main" id="placeOfBirth">Brak danych</p>
+            </section>
+            <p class="krecha"></p>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Adres zameldowania na pobyt stały</p>
+                <p class="main" id="address">Brak danych</p>
+                <p class="main" id="postalcode">Brak danych</p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Data zameldowania na pobyt stały</p>
+                <p class="main" id="registrationDate">Brak danych</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Funkcja wczytująca dane z LocalStorage
+    
+            document.getElementById("lastName").textContent = localStorage.getItem("lastName") || "";
+            document.getElementById("gender").textContent = localStorage.getItem("gender") || "Mężczyzna";
+            document.getElementById("fatherSurname").textContent = localStorage.getItem("fatherSurname") || "";
+            document.getElementById("motherSurname").textContent = localStorage.getItem("motherSurname") || "";
+            document.getElementById("placeOfBirth").textContent = localStorage.getItem("placeOfBirth") || "";
+            document.getElementById("address").textContent = localStorage.getItem("address") || "";
+            document.getElementById("postalcode").textContent = localStorage.getItem("postalcode") || "";
+
+            const registrationDate = localStorage.getItem("registrationDate");
+            document.getElementById("registrationDate").innerText = registrationDate ? formatDate(registrationDate) : "";
+    </script>
+    </style>
+      
+</head>
+<section>
+<a class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    <div>
+        <p class="info">Ostatnia aktualizacja</p>
+        <p id="sukadziwkakurwa" class="main">--.--.----</p>
+    </div>
+    <button id="aktualizuj">Aktualizuj</button>
+</a>
+</section>
+<!-- Powiadomienie -->
+<div id="notification" class="notification" style="display: none; position: fixed; right: -20vh; transform: translateX(-50%); background-color: #444; color: white; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 1000;">
+    Dokument został zaktualizowany
+</div>
+
+<script>
+    // Funkcja zwracająca dzisiejszą datę w formacie DD.MM.YYYY
+    function getTodayDate() {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+        return `${day}.${month}.${year}`;
+    }
+
+    // Funkcja do wyświetlenia powiadomienia
+    function showNotification() {
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+
+        // Ukrycie powiadomienia po 3 sekundach
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    // Funkcja zapisywania daty do LocalStorage
+    function saveDateToLocalStorage(date) {
+        localStorage.setItem('lastUpdateDate', date);
+    }
+
+    // Funkcja pobierania daty z LocalStorage
+    function loadDateFromLocalStorage() {
+        return localStorage.getItem('lastUpdateDate');
+    }
+
+    // Inicjalizacja daty na starcie aplikacji
+    function initializeDate() {
+        const savedDate = loadDateFromLocalStorage();
+        const dateElement = document.getElementById('sukadziwkakurwa');
+        if (savedDate) {
+            dateElement.textContent = savedDate; // Wyświetlenie zapisanej daty
+        } else {
+            dateElement.textContent = '--.--.----'; // Domyślny placeholder
+        }
+    }
+
+    // Obsługa zdarzenia kliknięcia
+    document.getElementById('aktualizuj').addEventListener('click', function (event) {
+        event.preventDefault(); // Zatrzymaj domyślną akcję, czyli przeładowanie strony
+
+        // Pobranie aktualnej daty
+        const todayDate = getTodayDate();
+
+        // Zaktualizuj datę w widoku
+        const dateElement = document.getElementById('sukadziwkakurwa');
+        dateElement.textContent = todayDate;
+
+        // Zapisz datę do LocalStorage
+        saveDateToLocalStorage(todayDate);
+
+        // Pokaż powiadomienie
+        showNotification();
+    });
+
+    // Uruchomienie inicjalizacji na starcie aplikacji
+    document.addEventListener('DOMContentLoaded', initializeDate);
+</script>
+
+    
+    </a>
+    <link rel="stylesheet" href="../../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <a class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 10px 20px; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-decoration: none; font-family: Arial, sans-serif;">
+        <i class="fa-regular fa-trash-can" style="color: red; margin-right: 10px;"></i>
+        <span style="color: red; font-size: 16px; font-weight: 550;">Usuń dokument</span>
+    </a>
+    <p class="disclaimer" style="margin-top: 16px;">
+
+</div>
+</head>
+<body>
+                <div class="BottomNav_bottomNav__JQdpA"> 
+                    <div class="BottomNav_bnTab__WzkWH"> 
+                        <img src="ikony/homeb.svg" alt="home.html">
+                        <span class="BottomNav_activeText__6iAIF">Pulpit</span>
+                    </div>
+        
+                    <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='documents.html'">
+                        <img src="ikony/framedperson.svg" alt="documents.html">
+                        <span>Dokumenty</span>
+                    </div>
+        
+                    <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='services.html'">
+                        <img src="ikony/services.svg" alt="services.html">
+                        <span>Usługi</span>
+                    </div>
+        
+                    <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='qr.html'">
+                        <img src="ikony/scanner.svg" alt="qr.html">
+                        <span>Kod QR</span>
+                    </div>
+        
+                    <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='more.html'">
+                        <img src="ikony/more.svg" alt="more.html">
+                        <span>Więcej</span>
+                    </div>
+                    <style>
+                    /* Dolny pasek nawigacyjny */
+        .BottomNav_bottomNav__JQdpA {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+            background-color: #f5f6fb;
+            border-top: 1px solid #d6d6d6;
+            z-index: 99;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            left: 0;
+        }
+
+        .BottomNav_bnTab__WzkWH {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 10px;
+        }
+
+        .BottomNav_bnTab__WzkWH img {
+            height: 24px;
+            margin-bottom: 4px;
+        }
+
+        .BottomNav_bnTab__WzkWH span {
+            font-size: .7em;
+            font-weight: 300;
+        }
+
+        .BottomNav_activeText__6iAIF {
+            color: var(--blue-active);
+        }
+
+        /* Stylizacja dla kliknięcia */
+        .BottomNav_bnTab__WzkWH img:active,
+        .BottomNav_bnTab__WzkWH img:focus,
+        .BottomNav_bnTab__WzkWH:active,
+        .BottomNav_bnTab__WzkWH:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .BottomNav_bnTab__WzkWH {
+            -webkit-tap-highlight-color: transparent;
+        }
+</style>
+                </div>
+            </body>
+                <section class="witam">
+                    <button class="wybor">
+                        <div id="kod">
+                        </div>
+                    </button>
+                </section>
+                <section class="witam">
+                    <button class="wybor">
+                        <div id="more">
+                        </div>
+                    </button>
+                </section>
+            </footer>
+    <script src="dowod_files/rozwijka.js"></script>
+    <section id="menu" style="display: none;">
+        <section id="wybordokumentu" style="display: none;">
+            <div id="szaro"></div>
+            <section id="wybierzdokument">
+                <section id="wyborbottom"></section>
+                <style>
+                #wyborbottom {
+
+                    border-radius: 1px;
+                }
+            </style>
+<!-- <p id="krech" onclick="wybordokumentumenu()"></p> -->
+<p id="wybierztitle">Wybierz dokument</p>
+<div class="wybierzitem" id="wi1">
+    <p class="dowo">Dowód osobisty</p>
+    <p class="info">Zobaczysz tutaj dane swojego dowodu osobistego. Ale jeśli chcesz potwierdzić tożsamość, potrzebujesz fizycznego dokumentu.</p>
+    <button onclick="danedowodowe()">Pokaż dane</button>
+</div>
+<div class="wybierzitem" id="wi2">
+    <p class="dowo">mDowód</p>
+    <p class="info">Nie używaj danych mDowodu w banku, gdy wyjeżdżasz za granicę lub składasz wniosek o dowód osobisty.</p>
+    <button onclick="danemdowodowe()">Pokaż dane</button>
+</div>
+<style>
+#wi1 {
+    background-image: url('dowod_files/warstwa1.png'); /* Wstaw tutaj rzeczywisty link do obrazu */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 351px;
+    height: 241.98px;
+    padding: 32px 36px;
+}
+</style>
+<style>
+    #wi2 {
+        background-image: url('dowod_files/warstwa2.png'); /* Wstaw tutaj rzeczywisty link do obrazu */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 351px;
+        height: 241.98px;
+        padding: 32px 36px;
+    }
+    </style>
+
+
+
+                <button class="zamknijprzycisk" onclick="wybordokumentumenu()">Zamknij</button>
+            </section>
+        </section>
+        <section id="danemdowodu" style="display: none;">
+            <div id="szaro"></div>
+            <section id="danedowodowe" style="display: none;">
+                <section>
+                    <div class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                        <p id="danetitle" style="margin: 10px 0 0 0; font-size: 16px; text-align: center; width: 100%;">Dane mDowodu</p>
+                        <a href="#" onclick="zamknij2()" style="margin: 10px 0 0 0; font-size: 14px; color: #007aff; text-decoration: none; position: absolute; right: 20px;">Zamknij</a>
+                      </div>
+                    </div>
+                    <section id="danebox">
+                        <section class="dana">
+                            <p class="info">Seria i numer</p>
+                            <p class="main seria" id="idSeries">Brak danych</p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Termin ważności</p>
+                            <p class="main" id="expiryDate">Brak danych</p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Data wydania</p>
+                            <p class="main" id="issueDate">Brak danych</p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Imię ojca</p>
+                            <p class="main" id="fathername">Brak danych</p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Imię matki</p>
+                            <p class="main" id="mothername">Brak danych</p>
+
+                            <script>
+                                document.getElementById("idSeries").textContent = localStorage.getItem("idSeries") || "Brak danych";
+                       
+                                const expiryDate = localStorage.getItem("expiryDate");
+                                document.getElementById("expiryDate").innerText = expiryDate ? formatDate(expiryDate) : "Brak danych";
+                       
+                                const issueDate = localStorage.getItem("issueDate");
+                                document.getElementById("issueDate").innerText = issueDate ? formatDate(issueDate) : "Brak danych";
+                       
+                                document.getElementById("fathername").textContent = localStorage.getItem("fathername") || "Brak danych";
+                                document.getElementById("mothername").textContent = localStorage.getItem("mothername") || "Brak danych";
+                           </script>
+
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <script>
+         document.getElementById("idSeries").textContent = localStorage.getItem("idSeries") || "Brak danych";
+
+         const expiryDate = localStorage.getItem("expiryDate");
+         document.getElementById("expiryDate").innerText = expiryDate ? formatDate(expiryDate) : "Brak danych";
+
+         const issueDate = localStorage.getItem("issueDate");
+         document.getElementById("issueDate").innerText = issueDate ? formatDate(issueDate) : "Brak danych";
+
+         document.getElementById("fathername").textContent = localStorage.getItem("fathername") || "Brak danych";
+         document.getElementById("mothername").textContent = localStorage.getItem("mothername") || "Brak danych";
+    </script>
+        <section id="danedowodu" style="display: none;">
+            <div id="szaro"></div>
+            <section id="danedowodowe">
+                <section>
+                    <div class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                        <p id="danetitle" style="margin: 10px 0 0 0; font-size: 16px; text-align: center; width: 100%;">Dane dowodu osobistego</p>
+                        <a href="#" onclick="zamknij2()" style="margin: 10px 0 0 0; font-size: 14px; color: #007aff; text-decoration: none; position: absolute; right: 20px;">Zamknij</a>
+                      </div>
+                    </div>
+                    <section id="danebox">
+                        <style>
+                            #danebox {
+                                border: none;
+                                width: 358px; /* Szerokość zgodnie z obrazem */
+                                height: 348px; /* Wysokość */
+                                background-color: white; /* Kolor tła */
+                                padding: 16px; /* Odstępy wewnętrzne */
+                                margin: 20px auto; /* Wyśrodkowanie */
+                                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Cień */
+                                border-radius: 10px; /* Zaokrąglone rogi */
+                                font-family: 'SF Pro', sans-serif; /* Czcionka */
+                            }
+                        </style>
+                                                <section class="dana">
+                            <p class="info">Seria i numer</p>
+                            <p class="main seria" id="idseriesx"> <button id="kopiuj">Kopiuj</button></p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                           <p class="info">Status</p>
+                           <p class="main"><span style="display: inline-block; width: 10px; height: 10px; background-color: green; border-radius: 50%; margin-right: 6px;"></span> Wydany</p> <!-- Przesuniďż˝cie kropki -->  
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Organ wydający</p>
+                            <p class="main"id="city"></p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Termin ważności</p>
+                            <p class="main"id="expiryDatex"></p>
+                        </section>
+                        <p class="krecha2"></p>
+                        <section class="dana">
+                            <p class="info">Data wydania</p>
+                            <p class="main"id="issueDatex"></p>
+
+                            <script>
+                                document.getElementById("idseriesx").textContent = localStorage.getItem("idSeriesx") || "Brak danych";
+                       
+                                const expiryDatex = localStorage.getItem("expiryDatex");
+                                document.getElementById("expiryDatex").innerText = expiryDatex ? formatDate(expiryDatex) : "Brak danych";
+                       
+                                const issueDatex = localStorage.getItem("issueDatex");
+                                document.getElementById("issueDatex").innerText = issueDatex ? formatDate(issueDatex) : "Brak danych";
+                       
+                                document.getElementById("city").textContent = localStorage.getItem("city") || "Brak danych";
+                           </script>
+                            
+                        </section>
+                </section>
+            </section>
+        </section>
+        
+    </section>
+
+    
+    <script src="dowod_files/wybor.js"></script>
+    <script src="dowod_files/scale.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', checkIPAccess);
+    </script>
+
+    <script>
+
+            // Funkcja konwertująca tekst na wielkie litery
+function convertToUpperCase(input) {
+    input.value = input.value.toUpperCase();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Sprawdzamy, czy w LocalStorage są zapisane dane użytkownika
+    const userData = JSON.parse(localStorage.getItem('userProfileData'));
+
+    if (userData) {
+        // Aktualizujemy dane na stronie
+        document.getElementById('name-display').textContent = userData.name;
+document.getElementById('surname-display').textContent = userData.surname;
+document.getElementById('nationality-display').textContent = userData.nationality;
+document.getElementById('birthDate-display').textContent = userData.birthDate;
+document.getElementById('pesel-display').textContent = userData.pesel;
+
+    }
+});
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+</body>
+<!-- Mirrored from sb987c4zjvju65987b.ct8.pl/fObywatel_samepoint1_j0ysYnGidI/dowodnowy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2024 19:33:53 GMT -->
+
+<!-- Mirrored from ip75.vp3.titanaxe.com/src/output/d4e8e88d-e151-43b6-9740-d0542af42ae5/dowodnowy.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2025 11:40:26 GMT -->
+</html>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const border = document.querySelector('.photo-border');
+    const profileImage = document.getElementById('profileImage');
+    
+    function updateImageSize() {
+        const borderRect = border.getBoundingClientRect();
+        profileImage.style.width = `${borderRect.width}px`;
+        profileImage.style.height = `${borderRect.height}px`;
+    }
+    
+    updateImageSize();
+    window.addEventListener('resize', updateImageSize);
+    
+    const savedImage = localStorage.getItem('profileImage');
+    if (savedImage) {
+        profileImage.src = savedImage;
+    }
+});
+</script>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mOybwatel 2.0</title>
+    <link rel="shortcut icon" href="/dowod_files/favicon.ico" type="image/x-icon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="dowod_files/main.css" data-n-g="">
+    <link rel="manifest" href="manifest.json">
+    <noscript data-n-css=""></noscript>
+    <style>
+        body {
+            overscroll-behavior: contain;
+        }
+
+        .navbar {
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            display: flex;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .dzit {
+                margin-bottom: 1.0rem;
+            }
+        }
+
+        .photo {
+            position: relative;
+            filter: grayscale(100%);
+            z-index: 1;
+            display: block;
+        }
+
+        #gradient {
+            position: relative;
+            bottom: 10px;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            color: #f1f1f1;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+            padding: 6px;
+            text-align: center;
+            z-index: 2;
+            border-radius: 0 0 0.5rem 0.5rem;
+            margin: 0;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+    <style>
+
+
+        /* Stylizacja responsywna */
+        @media (max-width: 768px) {
+            .Documents_container__SBKda {
+                padding: 10px;
+            }
+        }
+
+        /* Dolny pasek nawigacyjny */
+        .BottomNav_bottomNav__JQdpA {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+            background-color: #f5f6fb;
+            border-top: 1px solid #d6d6d6;
+            z-index: 99;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            left: 0;
+        }
+
+        .BottomNav_bnTab__WzkWH {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 10px;
+        }
+
+        .BottomNav_bnTab__WzkWH img {
+            height: 24px;
+            margin-bottom: 4px;
+        }
+
+        .BottomNav_bnTab__WzkWH span {
+            font-size: .7em;
+            font-weight: 300;
+        }
+
+        .BottomNav_activeText__6iAIF {
+            color: var(--blue-active);
+        }
+
+        /* Stylizacja dla kliknięcia */
+        .BottomNav_bnTab__WzkWH img:active,
+        .BottomNav_bnTab__WzkWH img:focus,
+        .BottomNav_bnTab__WzkWH:active,
+        .BottomNav_bnTab__WzkWH:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .BottomNav_bnTab__WzkWH {
+            -webkit-tap-highlight-color: transparent;
+        }
+</style>
+<style>
+    /* Add this to existing styles */
+    .id-card[href="dowodstary.html"] {
+        display: none;
+    }
+</style>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="dowod_files/scale.js"> defer</script>
+    <script src="js/security.js"></script>
+    <script src="js/navigation.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', checkIPAccess);
+    </script>
+</head>
+<body style="display: none">
+    <header>
+        <div id="inicjaly1">
+            <!-- <p id="inicjaly-p">KD</p> -->
+             <img src="ikony/coi_common_ui_ic_mobywatel_logo.svg" alt="">
+        </div>
+        <div id="dzwonek" style="margin-top: 9px;">
+            <img style="width: 23px; height: 23px;" src="ikony/ab013_notifications.svg" alt="">
+        </div>
+    </header>
+    <section id="dokumenty">
+        <p style="font-weight: bold;" id="tekst-dok">Dokumenty</p>
+        <section id="buttons">
+            <button onclick="window.location.href='documents.html'" id="dodaj">Dodaj</button>
+            <button onclick="window.location.href='documents.html'" id="wszystkie">Wszystkie</button>
+        </section>
+    </section>
+    <section id="wybor-p">
+        <a class="id-card" href="dowodnowy.html">
+            <img src="dowod_files/personicon.svg" alt="icon" class="id-card-icon">
+            <img class="id-card-top" src="dowod_files/cardbg1.svg">
+            <div class="id-card-bottom">
+                <p>mDowód</p>
+                <img src="dowod_files/arrow.svg" alt="arrow">
+            </div>
+        </a>
+        <a class="id-card" href="dowodstary.html">
+            <img src="dowod_files/steering_wheel-icon.svg" alt="icon" class="id-card-icon">
+            <img class="id-card-top" src="dowod_files/cardbg2.svg">
+            <div class="id-card-bottom">
+                <p>mPrawo jazdy</p>
+                <img src="dowod_files/arrow.svg" alt="arrow">
+            </div>
+        </a>
+    </section>
+    <section id="dokumenty">
+        <p id="tekst-dok">Usługi</p>
+        <section id="buttons">
+            <button onclick="window.location.href='services.html'" id="wszystkie">Wszystkie</button>
+        </section>
+    </section>
+    <div class="madziamojakotka123">
+ <style>      
+.madziamojakotka123 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trzy kolumny */
+    gap: 10px; /* Odstęp między elementami */
+    padding: 10px; 
+    background-color: #f2f4f7;
+    justify-items: center;
+    max-width: 390vw; /* Maksymalna szerokość kontenera */
+    max-height: 50vh; /* Maksymalna wysokość kontenera */
+}
+</style>
+        <div class="suka">
+            <button class="przycisk">
+                <img src="ikony/bezpieczenstwo.png" alt="">
+            </button>
+            <p class="usluga-tekst">Bezpiecznie w sieci</p>
+        </div>
+
+        <div class="suka">
+            <button class="przycisk">
+                <img src="ikony/powodz.png" alt="">
+            </button>
+            <p class="usluga-tekst">Alert powodziowy</p>
+        </div>
+
+        <div class="suka">
+            <button class="przycisk">
+                <img src="ikony/da008_zastrzez_pesel.svg" alt="">
+            </button>
+            <p class="usluga-tekst">Zastrzeż PESEL</p>
+        </div>
+
+        <div class="suka">
+            <button class="przycisk">
+                <img src="ikony/firma.png" alt="">
+            </button>
+            <p class="usluga-tekst">Firma</p>
+        </div>
+
+        <div class="suka">
+            <button class="przycisk">
+                <img src="ikony/da001_punkty_karne.svg" alt="">
+            </button>
+            <p class="usluga-tekst">Punkty karne</p>
+        </div>
+
+        <div class="suka">
+            <button class="przycisk">
+                <img src="ikony/mandat.png" alt="">
+            </button>
+            <p class="usluga-tekst">Mandaty</p>
+        </div>
+    </div>
+    <body>
+        <div class="BottomNav_bottomNav__JQdpA"> 
+            <div class="BottomNav_bnTab__WzkWH"> 
+                <img src="ikony/homeb.svg" alt="home.html">
+                <span class="BottomNav_activeText__6iAIF">Pulpit</span>
+            </div>
+
+            <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='documents.html'">
+                <img src="ikony/framedperson.svg" alt="documents.html">
+                <span>Dokumenty</span>
+            </div>
+
+            <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='services.html'">
+                <img src="ikony/services.svg" alt="services.html">
+                <span>Usługi</span>
+            </div>
+
+            <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='qr.html'">
+                <img src="ikony/scanner.svg" alt="qr.html">
+                <span>Kod QR</span>
+            </div>
+
+            <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='more.html'">
+                <img src="ikony/more.svg" alt="more.html">
+                <span>Więcej</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

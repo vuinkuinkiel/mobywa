@@ -1,0 +1,177 @@
+<html>
+ 
+<!-- Mirrored from 65.21.131.122:58189/yobywatel_premium/ekse/biometric-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Oct 2024 20:24:15 GMT -->
+<!-- Added by HTTrack -->
+<!-- Mirrored from ip75.vp3.titanaxe.com/src/output/d4e8e88d-e151-43b6-9740-d0542af42ae5/biometric-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2025 11:39:31 GMT -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+  <title>
+   mObywatel 2.0
+  </title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <link href="../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.html" rel="stylesheet"/>
+  <script src="js/security.js"></script>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .header img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .header .title {
+            font-size: 16px; /* Reduced font size */
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .header .version {
+            font-size: 16px; /* Reduced font size */
+            font-weight: normal;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+        }
+        .pin-prompt {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        .subtitle {
+            color: #1a5a91; /* Darker shade of blue */
+            margin-bottom: 10px;
+            background-color: #d9e6ff;
+            padding: 2px 6px; /* Reduced padding */
+            border-radius: 15px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 12px; /* Reduced font size */
+            margin-top: 10px; /* Moved lower */
+            cursor: pointer; /* Make it look clickable */
+        }
+        .pin-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 70px; /* Added margin-top to move it lower */
+        }
+        .pin-inputs input {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+  </style>
+  <script>
+        function redirectToIndex() {
+            window.location.href = "dashboard.html";
+        }
+  </script>
+  
+  <script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable keyboard shortcuts for copying, viewing source, printing, etc.
+    document.onkeydown = function(e) {
+        if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'p' || e.key === 'a')) {
+            e.preventDefault();
+        }
+        // Disable F12 for Developer Tools
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+I to prevent opening Developer Tools
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+    };
+
+    // Disable text selection using double-click
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable copying using mouse events
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable image drag
+    document.ondragstart = function() {
+        return false;
+    };
+
+    // Disable text drag
+    document.body.ondragstart = function() {
+        return false;
+    };
+</script>
+<script src="js/fullscreen-check.js"></script>
+<script>
+    window.addEventListener('load', checkInstallation);
+</script>
+ </head>
+ <body>
+  <div class="header">
+   <img alt="Logo with a white eagle on a red background" height="30" src="login.png" width="30"/>
+   <div class="title">
+    mObywatel
+   </div>
+   <div class="version">
+    2.0
+   </div>
+  </div>
+  <div class="container">
+   <div class="pin-prompt">
+    Wpisz PIN
+   </div>
+   <div class="subtitle" onclick="redirectToIndex()">
+    Logowanie hasłem
+   </div>
+   <div class="pin-inputs">
+    <input maxlength="1" type="text"/>
+    <input maxlength="1" type="text"/>
+    <input maxlength="1" type="text"/>
+    <input maxlength="1" type="text"/>
+   </div>
+  </div>
+
+ </body>
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <meta name="mobile-web-app-capable" content="yes">
+<!-- Mirrored from 65.21.131.122:58189/yobywatel_premium/ekse/biometric-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Oct 2024 20:24:15 GMT -->
+
+<!-- Mirrored from ip75.vp3.titanaxe.com/src/output/d4e8e88d-e151-43b6-9740-d0542af42ae5/biometric-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2025 11:39:32 GMT -->
+</html>
