@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="../dowod_files/favoicon.ico" type="image/x-icon">
+    <title>mObywatel 2.0</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f6fb;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #displayMessage {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+        }
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #064792;
+            margin: 0 0 20px 0;
+        }
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
+        .watermark {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+            opacity: 0.7;
+        }
+        .watermark a {
+            color: #064792;
+            text-decoration: none;
+        }
+        .copy-button {
+            background: #064792;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .copy-button:hover {
+            background: #043670;
+        }
+        .success-message {
+            color: #28a745;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="displayMessage">
+        <img src="../dowod_files/favoicon.ico" alt="Logo" class="logo">
+        <script>
+            function generateFingerprint() {
+                const components = {
+                    userAgent: navigator.userAgent,
+                    language: navigator.language,
+                    platform: navigator.platform,
+                    resolution: `${screen.width}x${screen.height}`,
+                    colorDepth: screen.colorDepth,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    touchPoints: navigator.maxTouchPoints,
+                    vendor: navigator.vendor
+                };
+                return btoa(JSON.stringify(components));
+            }
+
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const successMsg = document.getElementById('successMessage');
+                    successMsg.style.display = 'block';
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 2000);
+                });
+            }
+
+            const fingerprint = generateFingerprint();
+            document.getElementById('displayMessage').innerHTML += `
+                <h2>Rejestracja urządzenia</h2>
+                <p>Twój unikalny kod urządzenia:</p>
+                <button class="copy-button" onclick="copyToClipboard('${fingerprint}')">
+                    Kopiuj kod urządzenia
+                </button>
+                <div id="successMessage" class="success-message">
+                    Skopiowano do schowka!
+                </div>
+                <p>Wyślij ten kod do administratora w celu uzyskania dostępu.</p>
+                <div class="watermark">
+                    xObywatel • <a href="https://discord.gg/jQcVyeJKQm">Discord</a>
+                </div>
+            `;
+        </script>
+    </div>
+</body>
+</html>
